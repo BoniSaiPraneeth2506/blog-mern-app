@@ -1,0 +1,658 @@
+ *{
+  box-sizing: border-box;
+ }
+body{
+  color:#333;
+}
+
+
+.post img{
+  max-width: 100%;
+  height:168px;
+  margin-top: 0.2rem;
+  width:1000px;
+  
+}
+main{
+  padding:10px;
+  max-width:720px;
+  margin: 0 auto;
+}
+
+header{
+  display:flex;
+  justify-content: space-between;
+  margin-bottom:50px;
+  
+}
+
+header a{
+  text-decoration: none;
+  color:inherit;
+}
+
+header a.logo{
+  font-weight:bold;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+ header nav{
+  display:flex;
+  gap:15px;
+} 
+
+.post{
+  display: grid;
+  grid-template-columns: 0.94fr  1.06fr;
+  gap:20px;
+  margin-bottom: 15px;
+
+}
+.texts h2{
+  margin:0;
+  font-size: 1.8rem;
+}
+
+.texts {
+  position:relative;
+  
+}
+
+.info a{
+  text-decoration: none;
+  margin:0;
+  padding-bottom: 0.09rem;
+}
+.info{
+  display:flex;
+  margin:6px 0;
+  color:#888;
+  font-weight: bold;
+  display:flex;
+  gap:5px;
+  align-items: center;
+}
+
+p.summary{
+  margin:10px 0;
+  line-height: 1.5rem;
+}
+
+
+form.login,
+form.register {
+  max-width: 400px;
+  margin: 100px auto;
+   padding:30px 50px 50px 50px;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border 0.3s;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: #555;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  display: block;
+  background-color: #444;     
+  border: 0;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #333;       
+}
+
+form h1{
+  text-align: center;
+}
+
+
+
+div.post-page div.image{
+  max-height:300px;
+  display:flex;
+  overflow: hidden;
+}
+
+div.post-page div.image img{
+  object-fit: cover;
+  object-position: center center;
+}
+div.post-page a{
+  text-decoration: underline;
+  color:#333;
+}
+
+div.post-page h1{
+  text-align: center;
+  margin:10px 0 5px;
+}
+div.post-page .time{
+  text-align: center;
+  display:block;
+  font-size: .7rem;
+  color:#aaa;
+}
+div .post-page div.author{
+  text-align: center;
+  margin:5px 0 15px;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+
+.edit-row{
+  text-align: center;
+  margin-bottom: 20px;
+  display:flex;
+  gap:5px;
+  justify-content: center;
+}
+
+div .post-page .edit-btn{
+  background-color: #333;
+  display: inline-block;
+  padding:13px 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  color:#fff;
+}
+
+div .post-page .delete-btn{
+  background-color: #c35d5d;
+  display: inline-block;
+  padding:13px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  color:#fff;
+}
+
+.delete-div{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex-direction: column;
+}  
+
+
+
+.read-btn{
+  position: absolute;
+  top:152px;
+  text-decoration: underline;
+  color:inhert;
+}
+
+
+
+.success-message {
+  position: fixed;             
+  bottom: 20px;                 
+  right: 20px;                 
+  min-width: 320px;            
+  max-width: 400px;
+  height: auto;                 
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 16px 24px;          
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: left;
+  font-size: 16px;
+  z-index: 10000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  animation: slideIn 0.3s ease-out;
+}
+
+.reglog{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:7px;
+  padding-top: 12px;
+  margin: auto;
+  color:inherit;
+  margin:auto;
+  align-items: center;
+  text-decoration: none;
+}
+.reglog span{
+  color:blue;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+
+
+ .author-welcome {
+  display: flex;
+  align-items: stretch; 
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-image {
+  flex: 0 0 150px; 
+  margin-right: 1.5rem;
+}
+
+.welcome-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 8px;
+}
+
+.welcome-content {
+  flex: 1;
+}
+
+.welcome-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.welcome-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}   
+
+
+/* @media screen and (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+  
+  .post {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px; 
+  }
+  
+  .post img {
+    height: 200px;
+    order: -1;
+  }
+  
+  .texts {
+    padding-bottom: 25px; 
+  }
+  
+  .texts h2 {
+    font-size: 1.5rem;
+  }
+  
+  p.summary {
+    text-align: justify;
+    margin-bottom: 10px; 
+  }
+  
+ 
+  a.read-btn {
+    position: static !important;
+    display: block !important;
+    margin: 15px 0 15px 0 !important;
+    clear: both;
+    width: fit-content !important;
+    float: none !important;
+  }
+  
+  form.login,
+  form.register {
+    margin: 20px auto;
+    padding: 20px 15px 30px 15px;
+  }
+  
+  div.post-page h1 {
+    font-size: 1.6rem;
+  }
+  
+  div.post-page div.image {
+    max-height: 250px;
+  }
+  
+  .edit-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div .post-page .edit-btn,
+  div .post-page .delete-btn {
+    padding: 12px 25px;
+    width: 200px;
+  }
+  
+  .success-message {
+    left: 10px;
+    right: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .author-welcome {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .welcome-image {
+    flex: 0 0 120px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+  
+  .welcome-content {
+    text-align: center;
+  }
+  
+  .welcome-content h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .welcome-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .welcome-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 10px;
+  }
+  
+  .post {
+    margin-bottom: 35px;
+  }
+  
+  .texts {
+    padding:30px;
+  }
+  
+  .texts h2 {
+    font-size: 1.3rem;
+  }
+  
+  .post img {
+    height: 180px;
+  }
+  
+  p.summary {
+    margin-bottom: 12px; 
+  }
+  
+  
+  .texts a.read-btn {
+    display: block ;
+    margin: 18px 0 18px 0 !important;
+    text-align: left;
+    width: fit-content !important;
+  }
+  
+  form.login,
+  form.register {
+    margin: 10px auto;
+    padding: 15px 10px 25px 10px;
+  }
+  
+  input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  div.post-page h1 {
+    font-size: 1.4rem;
+  }
+  
+  div.post-page div.image {
+    max-height: 200px;
+  }
+  
+  div .post-page .edit-btn,
+  div .post-page .delete-btn {
+    padding: 10px 20px;
+    width: 180px;
+    font-size: 0.9rem;
+  }
+  
+  .welcome-image {
+    flex: 0 0 100px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .welcome-text {
+    font-size: 0.85rem;
+  }
+} */
+
+
+
+
+@media screen and (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+  
+  .post {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px; /* Reduced from 25px */
+  }
+  
+  .post img {
+    height: 200px;
+    order: -1;
+  }
+  
+  .texts {
+    padding-bottom: 0; /* Removed padding-bottom that was causing extra spacing */
+  }
+  
+  .texts h2 {
+    font-size: 1.5rem;
+  }
+  
+  p.summary {
+    text-align: justify;
+    margin-bottom: 8px; /* Reduced margin */
+  }
+  
+  /* Fix read button positioning */
+  a.read-btn {
+    position: static !important;
+    display: block !important;
+    margin: 8px 0 0 0 !important; /* Reduced top margin, removed bottom margin */
+    clear: both;
+    width: fit-content !important;
+    float: none !important;
+  }
+  
+  form.login,
+  form.register {
+    margin: 20px auto;
+    padding: 20px 15px 30px 15px;
+  }
+  
+  div.post-page h1 {
+    font-size: 1.6rem;
+  }
+  
+  div.post-page div.image {
+    max-height: 250px;
+  }
+  
+  .edit-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  div .post-page .edit-btn,
+  div .post-page .delete-btn {
+    padding: 12px 25px;
+    width: 200px;
+  }
+  
+  .success-message {
+    left: 10px;
+    right: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .author-welcome {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .welcome-image {
+    flex: 0 0 120px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+  
+  .welcome-content {
+    text-align: center;
+  }
+  
+  .welcome-content h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .welcome-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .welcome-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 10px;
+  }
+  
+  .post {
+    margin-bottom: 18px; /* Reduced from 35px */
+  }
+  
+  .texts {
+    padding-bottom: 0; /* Removed padding-bottom */
+  }
+  
+  .texts h2 {
+    font-size: 1.3rem;
+  }
+  
+  .post img {
+    height: 180px;
+  }
+  
+  p.summary {
+    margin-bottom: 6px; /* Reduced margin */
+  }
+  
+  /* Read button for small screens */
+  .texts a.read-btn {
+    display: block;
+    margin: 6px 0 0 0 !important; /* Reduced margins */
+    text-align: left;
+    width: fit-content !important;
+  }
+  
+  form.login,
+  form.register {
+    margin: 10px auto;
+    padding: 15px 10px 25px 10px;
+  }
+  
+  input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  div.post-page h1 {
+    font-size: 1.4rem;
+  }
+  
+  div.post-page div.image {
+    max-height: 200px;
+  }
+  
+  div .post-page .edit-btn,
+  div .post-page .delete-btn {
+    padding: 10px 20px;
+    width: 180px;
+    font-size: 0.9rem;
+  }
+  
+  .welcome-image {
+    flex: 0 0 100px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .welcome-text {
+    font-size: 0.85rem;
+  }
+}

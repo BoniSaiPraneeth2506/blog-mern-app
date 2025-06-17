@@ -1,0 +1,410 @@
+/* postpage.css - Enhanced single post page styling */
+
+/* Single post page styling - keeping your original margins and layout */
+ /* div.post-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+div.post-page h1 {
+  text-align: center;
+  margin: 10px 0 5px;
+  
+  font-weight: bold;
+}
+
+div.post-page .time {
+  text-align: center;
+  display: block;
+  font-size: .7rem;
+  color: #353232;
+  margin: 5px 0;
+}
+
+
+
+div.post-page .author {
+  text-align: center;
+  margin: 5px 0 15px;
+  font-size: .8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+div.post-page .author::before {
+  content: "👤 ";
+  margin-right: 4px;
+}
+
+div.post-page .image {
+  max-height: 300px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 15px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+div.post-page .image img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.3s ease;
+}
+
+div.post-page .image:hover img {
+  transform: scale(1.02);
+}
+
+div.post-page a {
+  text-decoration: underline;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+div.post-page a:hover {
+  color: #555;
+}
+
+
+div.post-page .content {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+div.post-page .content p {
+  margin: 15px 0;
+}
+
+div.post-page .content h2 {
+  margin: 25px 0 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+div.post-page .content h2::before {
+  content: "📌 ";
+  margin-right: 6px;
+}
+
+div.post-page .content h3 {
+  margin: 20px 0 10px;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+div.post-page .content h3::before {
+  content: "▶️ ";
+  margin-right: 6px;
+}
+
+div.post-page .content blockquote {
+  margin: 20px 0;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #444;
+  border-radius: 4px;
+  position: relative;
+}
+
+div.post-page .content blockquote::before {
+  content: "💬 ";
+  position: absolute;
+  top: 15px;
+  left: -12px;
+  background: #fff;
+  padding: 2px;
+}
+
+div.post-page .content ul li::before {
+  content: "✅ ";
+  margin-right: 6px;
+}
+
+div.post-page .content ul li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+div.post-page .content ol li {
+  margin: 8px 0;
+}
+
+
+div.post-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--scroll-progress, 0%);
+  height: 3px;
+  background: linear-gradient(90deg, #444, #666);
+  z-index: 1000;
+}
+
+
+@media (max-width: 768px) {
+  div.post-page {
+    padding: 8px;
+  }
+  
+  div.post-page .image {
+    max-height: 200px;
+  }
+}  */
+
+
+
+/* postpage.css - Enhanced single post page styling with React Quill fixes */
+
+/* Single post page styling - keeping your original margins and layout */
+div.post-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+div.post-page h1 {
+  text-align: center;
+  margin: 10px 0 5px;
+  /* font-size: 1.8rem; */
+  font-weight: bold;
+}
+
+div.post-page .time {
+  text-align: center;
+  display: block;
+  font-size: .7rem;
+  color: #353232;
+  margin: 5px 0;
+}
+
+div.post-page .author {
+  text-align: center;
+  margin: 5px 0 15px;
+  font-size: .8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+div.post-page .author::before {
+  content: "👤 ";
+  margin-right: 4px;
+}
+
+div.post-page .image {
+  max-height: 300px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 15px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+div.post-page .image img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.3s ease;
+}
+
+div.post-page .image:hover img {
+  transform: scale(1.02);
+}
+
+div.post-page a {
+  text-decoration: underline;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+div.post-page a:hover {
+  color: #555;
+}
+
+/* Content area styling */
+div.post-page .content {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* REACT QUILL SPECIFIC FIXES */
+
+/* Fix React Quill paragraph spacing - reduce excessive spacing between paragraphs */
+div.post-page .content .ql-editor p,
+div.post-page .content p {
+  margin: 8px 0 !important; /* Reduced from default 15px to 8px */
+}
+
+/* Fix React Quill line breaks - normalize single line breaks */
+div.post-page .content .ql-editor br,
+div.post-page .content br {
+  line-height: 1.2; /* Tighter line spacing */
+}
+
+/* React Quill container fixes */
+div.post-page .content .ql-editor {
+  padding: 0 !important; /* Remove default Quill padding */
+  line-height: 1.6 !important;
+}
+
+/* Fix React Quill empty paragraphs that create extra spacing */
+div.post-page .content .ql-editor p:empty,
+div.post-page .content p:empty {
+  margin: 0 !important;
+  line-height: 0;
+  height: 0;
+}
+
+/* Fix React Quill images - force max-width constraint */
+div.post-page .content .ql-editor img,
+div.post-page .content img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  display: block;
+  margin: 10px auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix React Quill image containers */
+div.post-page .content .ql-editor p img,
+div.post-page .content p img {
+  margin: 10px auto !important;
+}
+
+/* Additional React Quill content styling */
+div.post-page .content .ql-editor {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Fix React Quill list spacing */
+div.post-page .content .ql-editor ul,
+div.post-page .content .ql-editor ol,
+div.post-page .content ul,
+div.post-page .content ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+div.post-page .content .ql-editor li,
+div.post-page .content li {
+  margin: 4px 0; /* Reduced list item spacing */
+}
+
+/* Fix React Quill blockquotes */
+div.post-page .content .ql-editor blockquote,
+div.post-page .content blockquote {
+  margin: 15px 0 !important;
+  padding: 12px 16px !important;
+  background-color: #f9f9f9;
+  border-left: 4px solid #444;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Fix React Quill headings spacing */
+div.post-page .content .ql-editor h1,
+div.post-page .content .ql-editor h2,
+div.post-page .content .ql-editor h3,
+div.post-page .content h2,
+div.post-page .content h3 {
+  margin: 20px 0 10px !important;
+}
+
+div.post-page .content h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+div.post-page .content h2::before {
+  content: "📌 ";
+  margin-right: 6px;
+}
+
+div.post-page .content h3 {
+  font-size: 1.3rem;
+  color: #444;
+}
+
+div.post-page .content h3::before {
+  content: "▶️ ";
+  margin-right: 6px;
+}
+
+div.post-page .content blockquote::before {
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  background: #fff;
+  padding: 2px;
+}
+
+div.post-page .content ul li::before {
+  content: "✅ ";
+  margin-right: 6px;
+}
+
+div.post-page .content ul li {
+  list-style: none;
+  margin: 6px 0; /* Reduced margin */
+}
+
+div.post-page .content ol li {
+  margin: 6px 0; /* Reduced margin */
+}
+
+/* Fix React Quill divs that might cause spacing issues */
+div.post-page .content .ql-editor > div,
+div.post-page .content > div {
+  margin: 0;
+}
+
+/* Ensure no double spacing from nested elements */
+div.post-page .content .ql-editor p + p,
+div.post-page .content p + p {
+  margin-top: 8px !important;
+}
+
+/* Fix any remaining React Quill specific spacing issues */
+div.post-page .content .ql-editor {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Premium reading indicator */
+div.post-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--scroll-progress, 0%);
+  height: 3px;
+  background: linear-gradient(90deg, #444, #666);
+  z-index: 1000;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  div.post-page {
+    padding: 8px;
+  }
+  
+  div.post-page .image {
+    max-height: 200px;
+  }
+  
+  /* Mobile-specific React Quill fixes */
+  div.post-page .content .ql-editor img,
+  div.post-page .content img {
+    max-width: calc(100vw - 32px) !important; /* Account for mobile padding */
+  }
+  
+  div.post-page .content .ql-editor p,
+  div.post-page .content p {
+    margin: 6px 0 !important; /* Even tighter spacing on mobile */
+  }
+}

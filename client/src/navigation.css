@@ -1,0 +1,221 @@
+/* Simple Clean Navigation Styling */
+
+
+ .main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  /* padding: 15px 25px; */
+  background: #fff;
+  border-bottom: 1px solid #fffefe;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+} 
+
+/* Logo Styling */
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: #555;
+}
+
+/* Main Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Create Post Button */
+.create-btn {
+  padding: 8px 16px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.create-btn:hover {
+  background: #555;
+}
+
+/* Auth Buttons */
+.auth-btn {
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.register-btn {
+ color: #000000; 
+
+  border: 1px solid #ddd;
+  background-color: #e1e0e0;
+  
+}
+
+.register-btn:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+.login-btn {
+  background: #333;
+  color: white;
+}
+
+.login-btn:hover {
+  background: #555;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.profile-btn:hover {
+  background: #e9ecef;
+  border-color: #ccc;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  color: #666;
+  transition: transform 0.2s ease;
+}
+
+.profile-btn[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Dropdown Header */
+.dropdown-header {
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.user-name {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.user-email {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Dropdown Divider */
+.dropdown-divider {
+  height: 1px;
+  background: #eee;
+  margin: 0;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+}
+
+.logout-btn {
+  color: #dc3545;
+}
+
+.logout-btn:hover {
+  background: #fff5f5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 12px 20px;
+  }
+  
+  .main-nav {
+    gap: 15px;
+  }
+  
+  .create-btn,
+  .auth-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .dropdown-menu {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .main-nav {
+    gap: 12px;
+  }
+  
+  .create-btn,
+  .auth-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
