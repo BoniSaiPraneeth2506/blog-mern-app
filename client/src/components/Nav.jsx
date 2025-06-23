@@ -61,7 +61,7 @@ const Nav = () => {
       <nav className="main-nav">
         {userInfo ? (
           <>
-        <Link to="/create" className="create-btn" style={{ padding: '8px 16px' }}>
+        <Link to="/create" className="create-btn" style={{ padding: '9px 16px' }}>
           Create Post
          </Link>
             
