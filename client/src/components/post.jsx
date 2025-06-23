@@ -33,7 +33,7 @@ const Post = ({ _id, title, summary, cover, createdAt, author }) => {
   const {backendUrl}=useContext(BlogContext);
   
   return (
-     <Link to={`/post/${_id}`} className="post" style={{textDecoration:"none",color:"inherit"}}>
+     <Link to={`/post/${_id}`} className="post" style={{textDecoration:"none",color:"inherit",marginBottom: "20px"}}>
       <div className="image">
         <img src={`${backendUrl}/uploads/${cover}`} alt={title} />
       </div>
@@ -44,7 +44,7 @@ const Post = ({ _id, title, summary, cover, createdAt, author }) => {
           <time>{formatISO9075(new Date(createdAt))}</time>
         </div>
         <p className="summary">{summary}</p>
-        <a className='read-btn' style={{marginBottom: "20px"}}>Read more</a>
+        <a className='read-btn'>Read more</a>
       </div>
     </Link>
   );
