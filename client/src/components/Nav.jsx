@@ -1,76 +1,21 @@
-// import React, { useContext, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import axios from 'axios';
-// import { UserContext } from '../UserContext'; // 👈 make sure path is correct
-
-// const Nav = () => {
-//   const { userInfo, setUserInfo } = useContext(UserContext);
-
-//   // 🟢 Fetch user info when Nav mounts
-//   useEffect(() => {
-//     axios
-//       .get('http://localhost:4000/profile', {
-//         withCredentials: true,
-//       })
-//       .then((res) => {
-//         setUserInfo(res.data); // Set user info in context
-//       })
-//       .catch((err) => {
-//         console.log("Not logged in or error:", err.message);
-//         setUserInfo(null);
-//       });
-//   }, []);
-
-//   // 🔴 Logout handler
-//   const Logout = async () => {
-//     try {
-//       await axios.post("http://localhost:4000/logout", {}, {
-//         withCredentials: true,
-//       });
-//       setUserInfo(null);
-//     } catch (err) {
-//       console.error("Logout failed:", err.message);
-//     }
-//   };
-
-//   return (
-//     <header>
-//       <Link to="/" className="logo">My Blog</Link>
-//       <nav>
-//         {userInfo ? (
-//           <>
-//             <Link to="/create">Create New posts</Link>
-//             <a onClick={Logout} style={{ cursor: 'pointer' }}>Logout<span> ({userInfo.userName})</span></a>
-            
-//           </>
-//         ) : (
-//           <>
-//             <Link to="/register">Register</Link>
-//             <Link to="/login">Login</Link>
-//           </>
-//         )}
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Nav;
-
-
-
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../UserContext';
+import { BlogContext } from '../context/BlogContext';
+
 
 const Nav = () => {
   const { userInfo, setUserInfo } = useContext(UserContext);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const {backendUrl}=useContext(BlogContext);
+
+
 
   // Fetch user info when Nav mounts
   useEffect(() => {
     axios
-      .get('http://localhost:4000/profile', {
+      .get(backendUrl+'/profile', {
         withCredentials: true,
       })
       .then((res) => {
@@ -85,7 +30,7 @@ const Nav = () => {
   // Logout handler
   const Logout = async () => {
     try {
-      await axios.post("http://localhost:4000/logout", {}, {
+      await axios.post(backendUrl+"/logout", {}, {
         withCredentials: true,
       });
       setUserInfo(null);

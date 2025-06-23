@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
+import { BlogContext } from '../context/BlogContext';
+
 
 const EditPage = () => {
   const { id } = useParams(); // ✅ needed for fetching post
@@ -11,11 +13,13 @@ const EditPage = () => {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState(null);
   const [redirect, setRedirect] = useState(false);
+  const {backendUrl}=useContext(BlogContext);
+  
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/post/${id}`);
+        const res = await axios.get(`${backendUrl}/post/${id}`);
         setTitle(res.data.title);
         setSummary(res.data.summary);
         setContent(res.data.content);
@@ -40,7 +44,7 @@ const EditPage = () => {
   }
 
   try {
-    await axios.put(`http://localhost:4000/edit/${id}`, data, {
+    await axios.put(`${backendUrl}/edit/${id}`, data, {
       withCredentials: true,
     });
     setRedirect(true);

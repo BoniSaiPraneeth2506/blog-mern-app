@@ -4,17 +4,19 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import profile from '../assets/profileblog.avif';
 import { UserContext } from '../UserContext';
+import { BlogContext } from '../context/BlogContext';
 
 const Author = () => {
   const [posts, setPosts] = useState([]);
   const { username } = useParams();
   const { userInfo } = useContext(UserContext);
   const [you, setYou] = useState('');
+  const {backendUrl}=useContext(BlogContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/author/${username}`, {
+        const response = await axios.get(`${backendUrl}/author/${username}`, {
           withCredentials: true
         });
         setPosts(response.data);

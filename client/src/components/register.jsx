@@ -5,18 +5,22 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { BlogContext } from '../context/BlogContext';
+
 const register =  () => {
     const [userName,setUserName]=useState('');
     const [passWord,setPassWord]=useState('');
     const [redirect,setRedirect]=useState(false);
     const navigate = useNavigate();
+    const {backendUrl}=useContext(BlogContext);
+  
 
      const handleRegister =  async (e) => {
     e.preventDefault(); // prevent form reload
     console.log('Registering user:', { userName, passWord });
 
     try{
-      const response= await axios.post('http://localhost:4000/register', { userName, passWord })
+      const response= await axios.post(backendUrl+'/register', { userName, passWord })
        alert('registration successful');
        if(response){
         setRedirect(true);

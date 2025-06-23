@@ -5,7 +5,7 @@ import Login from './components/login'
 import Layout from './components/Layout';
 import Register from './components/register';
 import CreatePost from './components/CreatePost';
-import { UserContextProvider } from './UserContext';
+
 import IndexPage from './components/IndexPage';
 import PostPage from './components/PostPage';
 import EditPage from './components/EditPage';
@@ -16,7 +16,7 @@ import AuthorPage from './components/AuthorPage';
 function App() {
 
   return (
-    <UserContextProvider>
+    
 
     <Routes>
       <Route path='/' element={<Layout/>}>
@@ -37,7 +37,7 @@ function App() {
       </Route>
      
     </Routes>
-     </UserContextProvider>
+    
   );
 }
   

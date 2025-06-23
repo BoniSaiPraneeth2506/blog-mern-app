@@ -66,12 +66,17 @@ import { Navigate } from 'react-router-dom';
 import { UserContext } from '../UserContext';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { BlogContext } from '../context/BlogContext';
+
 const Login = () => {
   const [userName, setUserName] = useState('');
   const [passWord, setPassWord] = useState('');
   const [redirect, setRedirect] = useState(false);
   const { setUserInfo } = useContext(UserContext);
    const [successMessage, setSuccessMessage] = useState('');
+   const {backendUrl}=useContext(BlogContext);
+  
+
   
   const location = useLocation();
 
@@ -93,7 +98,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:4000/login',
+        backendUrl+'/login',
         { userName, passWord },  // or use correct keys as per your backend
         { withCredentials: true }
       );

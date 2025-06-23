@@ -63,11 +63,12 @@
 // };
 
 // export default CreatePost;
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
+import { BlogContext } from '../context/BlogContext';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -75,6 +76,7 @@ const CreatePost = () => {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState(null);
   const [redirect,setRedirect]=useState(false);
+  const {backendUrl}=useContext(BlogContext);
 
   const modules = {
     toolbar: [
@@ -106,7 +108,7 @@ const CreatePost = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:4000/create", data,{
+      const response = await axios.post(backendUrl+"/create", data,{
        withCredentials: true
       });
       console.log("✅ Post created:", response.data);

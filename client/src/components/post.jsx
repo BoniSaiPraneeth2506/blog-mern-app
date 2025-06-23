@@ -22,15 +22,20 @@
 
 // export default post
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { formatISO9075 } from 'date-fns';
 import { Link } from 'react-router-dom';
+import { BlogContext } from '../context/BlogContext';
+
+
 
 const Post = ({ _id, title, summary, cover, createdAt, author }) => {
+  const {backendUrl}=useContext(BlogContext);
+  
   return (
      <Link to={`/post/${_id}`} className="post" style={{textDecoration:"none",color:"inherit"}}>
       <div className="image">
-        <img src={`http://localhost:4000/uploads/${cover}`} alt={title} />
+        <img src={`${backendUrl}/uploads/${cover}`} alt={title} />
       </div>
       <div className="texts">
         <h2>{title}</h2>

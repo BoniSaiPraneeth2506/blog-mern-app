@@ -50,15 +50,20 @@ import '../postpage.css'
 import { useContext } from 'react';
 import { UserContext } from '../UserContext';
 import { Link } from 'react-router-dom';
+import { BlogContext } from '../context/BlogContext';
+
 
 const PostPage = () => {
   const { id } = useParams();
   const [postInfo, setPostInfo] = useState(null);
  const {userInfo}=useContext(UserContext);
+  const {backendUrl}=useContext(BlogContext);
+
+ 
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/post/${id}`);
+        const res = await axios.get(`${backendUrl}/post/${id}`);
         setPostInfo(res.data);
         
         console.log(res.data);
@@ -121,7 +126,7 @@ const PostPage = () => {
 
       <div className="image">
         <img 
-          src={`http://localhost:4000/uploads/${postInfo.cover}`} 
+          src={`${backendUrl}/uploads/${postInfo.cover}`} 
           alt={postInfo.title || "Post cover"} 
         />
       </div>
