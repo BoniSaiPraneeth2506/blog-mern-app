@@ -61,9 +61,9 @@ const Nav = () => {
       <nav className="main-nav">
         {userInfo ? (
           <>
-            <Link to="/create" className="create-btn">
-              Create Post
-            </Link>
+        <Link to="/create" className="create-btn" style={{ padding: '8px 16px' }}>
+          Create Post
+         </Link>
             
             <div className="profile-dropdown">
               <button 
