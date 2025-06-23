@@ -29,8 +29,13 @@ mongoose.connect(process.env.MONGODB_URL)
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB error:", err));
 
-// Start server
+// Sart server
 const PORT = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+    res.send("🚀 API is Running");
+});
+
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
