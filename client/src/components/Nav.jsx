@@ -55,14 +55,14 @@ const Nav = () => {
   return (
     <header className="main-header">
       <Link to="/" className="logo">
-        📝 My Blog
+        📝 Blog
       </Link>
       
       <nav className="main-nav">
         {userInfo ? (
           <>
             <Link to="/create" className="create-btn">
-              Create New Post
+              Create Post
             </Link>
             
             <div className="profile-dropdown">
