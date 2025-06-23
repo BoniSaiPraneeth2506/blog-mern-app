@@ -9,7 +9,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: 'blog-mern-app-zeta.vercel.app', // Your React dev server
+  origin: 'https://blog-mern-frontend-iqwk.onrender.com', 
   credentials: true
 }));
 
