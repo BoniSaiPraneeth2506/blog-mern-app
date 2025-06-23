@@ -44,7 +44,7 @@ const Post = ({ _id, title, summary, cover, createdAt, author }) => {
           <time>{formatISO9075(new Date(createdAt))}</time>
         </div>
         <p className="summary">{summary}</p>
-        <a className='read-btn'>Read more</a>
+        <a className='read-btn' style={{marginBottom: "10px";}>Read more</a>
       </div>
     </Link>
   );
